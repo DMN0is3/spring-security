@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "c71fe2d4-a683-49b8-9bc0-0c6936d09b22",
+		"name": "Spring REST LaptopSecurity HEROKU",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/ BUSCAR TODOS",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://spring-laptop-security.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"spring-laptop-security",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/user/laptops/{id} BUSCAR UNO",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "userpassword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "User",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://spring-laptop-security.herokuapp.com/user/laptops/1",
+					"protocol": "https",
+					"host": [
+						"spring-laptop-security",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"laptops",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/admin/create/ CREAR",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "adminpassword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"marca\": \"DELL\",\r\n        \"modelo\": \"Inspiron\",\r\n        \"pulgadas\": 15,\r\n        \"procesador\": \"I3\",\r\n        \"ram\": 8,\r\n        \"hdd\": 256,\r\n        \"peso\": 1.85,\r\n        \"precio\": 499,\r\n        \"disponible\": true\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://spring-laptop-security.herokuapp.com/admin/create/",
+					"protocol": "https",
+					"host": [
+						"spring-laptop-security",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"admin",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/admin/update/ ACTUALIZAR",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "adminpassword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"marca\": \"DELL\",\r\n    \"modelo\": \"Inspiron\",\r\n    \"pulgadas\": 15,\r\n    \"procesador\": \"I7\",\r\n    \"ram\": 16,\r\n    \"hdd\": 500,\r\n    \"peso\": 2.85,\r\n    \"precio\": 1699.0,\r\n    \"disponible\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://spring-laptop-security.herokuapp.com/admin/update/",
+					"protocol": "https",
+					"host": [
+						"spring-laptop-security",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"admin",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/admin/delete/{id} BORRAR UNO",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "adminpassword",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://spring-laptop-security.herokuapp.com/admin/delete/3",
+					"protocol": "https",
+					"host": [
+						"spring-laptop-security",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"admin",
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/admin/deleteAll/ BORRAR TODOS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "adminpassword",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://spring-laptop-security.herokuapp.com/admin/deleteAll/",
+					"protocol": "https",
+					"host": [
+						"spring-laptop-security",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"admin",
+						"deleteAll",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
